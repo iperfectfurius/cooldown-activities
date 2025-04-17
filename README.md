@@ -1,0 +1,2 @@
+# cooldown-activities
+Cooldown registry
