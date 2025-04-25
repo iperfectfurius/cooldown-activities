@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/font-awesome/css/all.css">
   <script src="https://cdn.jsdelivr.net/npm/progressbar.js@1.1.1/dist/progressbar.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js" defer></script>
-  <script src="scripts/scripts.js" defer></script>
+  <script src="scripts/scripts.js?v1" defer></script>
   <title>Cooldown Activities</title>
 </head>
 
@@ -24,10 +24,23 @@
   <div class="categories-container" id="categoriesContainer"></div>
   <div class="create-activity-container off" id="createActivityContainer">
     <div class="create-activity-form" id="createActivityForm">
-      <input type="number" name="categoryId" id="activityCategoryId" disabled>
-      <input type="text" name="activityName" id="activityName">
-      <input type="date" name="activityLastUpdateDate" id="activityLastUpdateDate">
-      <input type="time" name="Create activityLastUpdateTime" id="activityLastUpdateTime">
+      <h2>Create Activity</h2>
+      <div>
+        <span>Category:</span>
+        <input type="number" name="categoryId" id="activityCategoryId" disabled>
+      </div>
+      <div>
+        <span>Name:</span>
+        <input type="text" id="activityName">
+      </div>
+      <div>
+        <span>Date:</span>
+        <input type="date" name="activityLastUpdateDate" id="activityLastUpdateDate">
+      </div>
+      <div>
+        <span>Time:</span>
+        <input type="time" name="Create activityLastUpdateTime" id="activityLastUpdateTime">
+      </div>
       <input type="submit" id="createActivitySubmit">
     </div>
   </div>

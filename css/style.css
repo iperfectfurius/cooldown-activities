@@ -51,7 +51,7 @@ header {
 }
 
 .off {
-  display: none;
+  display: none !important;
 }
 
 .categories-container {
@@ -82,13 +82,12 @@ header {
     }
 
     .fa-plus {
-      color: #06b300;
+      color: #005a8f;
       cursor: pointer;
     }
 
     .fa-rotate-right {
       color: #06b300;
-      cursor: pointer;
     }
 
     .activities {
@@ -107,7 +106,7 @@ header {
         .fa-plus {
           position: absolute;
           right: 5px;
-          top: 10px;
+          top: 2px;
         }
       }
 
@@ -174,6 +173,15 @@ header {
           display: flex;
           width: 20%;
           justify-content: flex-end;
+          gap: 5px;
+
+          i{
+            cursor: pointer;
+          }
+
+          .fa-eye-slash{
+            color: rgba(255, 0, 0, 0.822);
+          }
         }
       }
     }
@@ -229,15 +237,49 @@ header {
   z-index: 1;
   position: absolute;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 
   .create-activity-form {
-    width: 200px;
-    height: 120px;
-    background-color: #e9ecef;
-    margin: auto;
+    width: 220px;
+    height: 175px;
     z-index: 2;
-
     cursor: default;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.733);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    gap: 5px;
+    padding: 5px;
+
+    h2 {
+      align-self: center;
+      margin-bottom: 5px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      span {
+        width: 80px;
+      }
+    }
+
+    input {
+      width: 95px;
+    }
+
+    input[type=submit] {
+      margin-top: 5px;
+      align-self: center;
+    }
   }
 }

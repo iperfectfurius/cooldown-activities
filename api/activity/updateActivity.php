@@ -1,20 +1,9 @@
 <?php
-
 define('INTERNAL', 1);
 
-include_once __DIR__ . '/../../config/config.php';
-include_once __DIR__ . '/../user/isAuthenticated.php';
+include_once __DIR__ . '/../../config/authentication.php';
 include_once __DIR__ . '/createHistoricalActivity.php';
-
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Methods: POST");
-header('Content-Type: application/json');
-
-$rawBody = file_get_contents('php://input');
-$data = json_decode($rawBody, true);
-
-$user = isValidUser($data['internalId'], $data['externalId']);
-if (!$user) die();
+include_once __DIR__ . '/../../config/config.php';
 
 if (!isset($data['activity'])) die();
 

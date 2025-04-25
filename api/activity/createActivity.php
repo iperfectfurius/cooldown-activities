@@ -20,8 +20,9 @@ if (!isset($data['activity'])) die();
 
 $categoryId = $data['activity']['category'];
 $activityName = $data['activity']['name'];
+$activityLastUpdate = $data['activity']['date'];
 
-$newActivity = createActivity($categoryId, $activityName);
+$newActivity = createActivity($categoryId, $activityName,$activityLastUpdate);
 
 if (!$newActivity) die(json_encode([]));
 
@@ -29,18 +30,19 @@ createHistoricalActivity($newActivity,$user);
 
 echo json_encode($newActivity);
 
-function createActivity(int $categoryId, string $activityName): array
+function createActivity(int $categoryId, string $activityName,string $date): array
 {
 	$db = Database::$db;
 
-	$query = "INSERT INTO cooldown_activities.activities (category,name)
-	VALUES (:categoryId,:name)
+	$query = "INSERT INTO cooldown_activities.activities (category,name,last_update_at)
+	VALUES (:categoryId,:name,:last_update_at)
 	RETURNING 
-	id,category,name,last_update_at,updates";
+	id,category,name \"activityName\",last_update_at \"lastUpdate\",updates";
 
 	$stmt = $db->prepare($query);
 	$stmt->bindParam(":categoryId", $categoryId);
 	$stmt->bindParam(":name", $activityName);
+	$stmt->bindParam(":last_update_at", $date);
 	$stmt->execute();
 	$rs = $stmt->fetch();
 
