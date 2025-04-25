@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #046D44;
+  margin: 0;
+  overflow: hidden;
+}
+
+p,
+h1,
+h2 {
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  height: 18px;
+  background-color: grey;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.border-shadown-style {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.733);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.beta-container {
+  position: absolute;
+  top: 120px;
+  width: 100%;
+  height: 100%;
+
+  .is-beta {
+    font-size: 28em;
+    rotate: -45deg;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.61);
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+.off {
+  display: none;
+}
+
+.categories-container {
+  width: 90%;
+  margin: 120px auto 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  padding-bottom: 15px;
+
+  .category {
+    width: 45%;
+    height: 325px;
+
+    >div {
+      border-bottom: 1px solid black;
+    }
+
+    .title {
+      padding: 5px;
+      font-weight: 500;
+      background-color: rgba(255, 166, 0, 0.801);
+      border-radius: 10px 10px 0 0;
+    }
+
+    .resume {
+      height: 60px;
+    }
+
+    .fa-plus {
+      color: #06b300;
+      cursor: pointer;
+    }
+
+    .fa-rotate-right {
+      color: #06b300;
+      cursor: pointer;
+    }
+
+    .activities {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 0px;
+
+      .activities-title {
+        height: 20px;
+        background-color: rgba(0, 0, 255, 0.158);
+        text-align: center;
+        font-weight: 500;
+        position: relative;
+        border-bottom: 1px solid black;
+
+        .fa-plus {
+          position: absolute;
+          right: 5px;
+          top: 10px;
+        }
+      }
+
+      .activities-container {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        max-height: 180px;
+      }
+
+      .activity-header {
+        background-color: #005c819c;
+        user-select: none;
+
+        span {
+          font-weight: bold;
+        }
+
+        .activity-header-name {
+          text-align: center;
+          font-size: 1.1em;
+          text-transform: uppercase;
+          font-weight: 300;
+        }
+      }
+
+      .activity:nth-child(odd) {
+        background-color: rgba(0, 0, 0, 0.075);
+      }
+
+      .activity {
+        border-bottom: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 5px;
+        padding: 0 5px 0 5px;
+        align-items: center;
+        text-wrap: nowrap;
+        height: 30px;
+
+
+        .activity-name {
+          flex-basis: 30%;
+          overflow: hidden;
+          font-weight: bold;
+        }
+
+        .timer {
+          flex-basis: 55%;
+          overflow: hidden;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          user-select: none;
+
+          svg {
+            height: 26px;
+            width: 26px;
+          }
+        }
+
+        .actions {
+          display: flex;
+          width: 20%;
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.452);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.link-user-page {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .ids {
+    padding: 20px 0 10px 0;
+    display: flex;
+    width: 300px;
+    margin: auto;
+    gap: 5px;
+    flex-direction: column;
+
+    input:not(.submit) {
+      cursor: not-allowed;
+      user-select: none;
+      pointer-events: none;
+      background-color: #e9ecef;
+      border: 1px solid #ced4da;
+      color: #6c757d;
+    }
+  }
+}
+
+.create-activity-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.671);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+
+  .create-activity-form {
+    width: 200px;
+    height: 120px;
+    background-color: #e9ecef;
+    margin: auto;
+    z-index: 2;
+
+    cursor: default;
+  }
+}
