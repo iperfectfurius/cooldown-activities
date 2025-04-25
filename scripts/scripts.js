@@ -340,5 +340,6 @@ async function updateTimeActivity(activityId) {
 
 	ProgressBars.filter(e => e.id == `activity_${rs}`).forEach(item => {
 		item.bar.setText(0);
+		item.bar.animate(0);
 	})
 }
