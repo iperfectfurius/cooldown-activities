@@ -3,7 +3,7 @@ define('INTERNAL', 1);
 
 if (!isset($_GET['id'])) die('???');
 
-include_once __DIR__ . '/../../config/config.php';
+include_once __DIR__ . '/config/config.php';
 
 $internalId = $_GET['id'];
 

@@ -66,6 +66,7 @@ function loadCategoriesAndActivities(data) {
 	Object.keys(data).forEach(key => {
 		createCategory(data[key], key);
 	});
+	addProgressBars();
 }
 
 function createCategory(category, name) {
@@ -83,7 +84,7 @@ function createCategory(category, name) {
 
 
 	categoriesContainer.append(categoryContainer);
-	addProgressBars();
+
 }
 
 function loadActivities(activities, categoryId) {
